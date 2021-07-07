@@ -34,6 +34,12 @@ namespace Umbraco.Cms.Core.Configuration
         /// </summary>
         /// <remarks>Generation can be triggered from the dashboard. The app does not restart.
         /// Models are not compiled and thus are not available to the project.</remarks>
-        SourceCodeAuto
+        SourceCodeAuto,
+
+        /// <summary>
+        /// Updates DB repo with infromation from PublishedContentModel classes
+        /// </summary>
+        /// <remarks>WIP</remarks>
+        CodeFirst
     }
 }

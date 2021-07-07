@@ -61,6 +61,7 @@
     <None Remove="umbraco\Data\**" />
     <None Remove="umbraco\logs\**" />
     <None Remove="umbraco\MediaCache\**" />
+    <Compile Remove="umbraco\models\Document\Sitemap.cs" />
     <None Include="umbraco\UmbracoWebsite\NoNodes.cshtml" />
   </ItemGroup>
 
@@ -72,6 +73,7 @@
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
+    <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.10.14" />
     <PackageReference Include="Umbraco.Code" Version="1.1.1">
       <PrivateAssets>all</PrivateAssets>
     </PackageReference>
@@ -80,6 +82,8 @@
   <PropertyGroup>
     <RazorCompileOnBuild>false</RazorCompileOnBuild>
     <RazorCompileOnPublish>false</RazorCompileOnPublish>
+    <UserSecretsId>67ae4932-d5d6-48f9-858f-62897bc4d0f7</UserSecretsId>
+    <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
   </PropertyGroup>
 
 </Project>

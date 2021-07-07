@@ -107,7 +107,13 @@ namespace Umbraco.Extensions
             builder.AddNotificationHandler<ContentTypeCacheRefresherNotification, AutoModelsNotificationHandler>();
             builder.AddNotificationHandler<DataTypeCacheRefresherNotification, AutoModelsNotificationHandler>();
 
+            builder.AddNotificationHandler<UmbracoApplicationStartingNotification, CodeFirstNotificationHandler>();
+            builder.AddNotificationHandler<UmbracoRequestEndNotification, CodeFirstNotificationHandler>();
+            builder.AddNotificationHandler<ContentTypeCacheRefresherNotification, CodeFirstNotificationHandler>();
+            builder.AddNotificationHandler<DataTypeCacheRefresherNotification, CodeFirstNotificationHandler>();
+
             builder.Services.AddSingleton<ModelsGenerator>();
+            builder.Services.AddSingleton<CodeFirstProcessor>();
             builder.Services.AddSingleton<OutOfDateModelsStatus>();
             builder.AddNotificationHandler<ContentTypeCacheRefresherNotification, OutOfDateModelsStatus>();
             builder.AddNotificationHandler<DataTypeCacheRefresherNotification, OutOfDateModelsStatus>();

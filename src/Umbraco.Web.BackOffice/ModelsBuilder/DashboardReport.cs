@@ -57,6 +57,9 @@ namespace Umbraco.Cms.Web.BackOffice.ModelsBuilder
                 case ModelsMode.SourceCodeAuto:
                     sb.Append("Strong typed models are generated on demand and anytime schema changes (i.e. Content Type) are made. Recompilation is necessary and models are available to all CSharp code.");
                     break;
+                case ModelsMode.CodeFirst:
+                    sb.Append("Strong typed models will update the Database on launch, currently one way direction e.g. changes in UI will be lost.");
+                    break;
             }
 
             sb.Append("</li>");
