@@ -9,8 +9,14 @@ namespace Umbraco.Cms.Infrastructure.ModelsBuilder
     [AttributeUsage(AttributeTargets.Property /*, AllowMultiple = false, Inherited = false*/)]
     public class ImplementPropertyTypeAttribute : Attribute
     {
-        public ImplementPropertyTypeAttribute(string alias) => Alias = alias;
+        public ImplementPropertyTypeAttribute(string alias, string propertyGroup = null)
+        {
+            Alias = alias;
+            PropertyGroup = propertyGroup;
+        }
 
         public string Alias { get; }
+
+        public string PropertyGroup { get; }
     }
 }

@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 
 namespace Umbraco.Cms.Core.Models.PublishedContent
 {
@@ -24,9 +24,57 @@ namespace Umbraco.Cms.Core.Models.PublishedContent
             ContentTypeAlias = contentTypeAlias;
         }
 
+
+        public PublishedModelAttribute(string contentTypeAlias, string contentTypeName, bool allowedAsRoot, string contentTypeDescription = null, string icon = null, string thumbnail = null)
+        {
+            if (contentTypeAlias == null)
+                throw new ArgumentNullException(nameof(contentTypeAlias));
+            if (string.IsNullOrWhiteSpace(contentTypeAlias))
+                throw new ArgumentException("Value can't be empty or consist only of white-space characters.", nameof(contentTypeAlias));
+
+            if (contentTypeName == null)
+                throw new ArgumentNullException(nameof(contentTypeName));
+            if (string.IsNullOrWhiteSpace(contentTypeName))
+                throw new ArgumentException("Value can't be empty or consist only of white-space characters.", nameof(contentTypeAlias));
+
+            ContentTypeAlias = contentTypeAlias;
+            ContentTypeName = contentTypeName;
+            ContentTypeDescription = contentTypeDescription;
+            ContentTypeIcon = icon;
+            ContentTypeThumbnail = thumbnail;
+            AllowedAsRoot = allowedAsRoot;
+        }
+
         /// <summary>
         /// Gets or sets the content type alias.
         /// </summary>
         public string ContentTypeAlias { get; }
+
+        /// <summary>
+        /// Get or sets the Name
+        /// </summary>
+        public string ContentTypeName { get; }
+
+        /// <summary>
+        /// Gets or sets the Description
+        /// </summary>
+        public string ContentTypeDescription { get; }
+
+        /// <summary>
+        /// Gets or sets the Icon
+        /// </summary>
+        /// <remarks>e.g. icon-document</remarks>
+        public string ContentTypeIcon { get; }
+
+        /// <summary>
+        /// Gets or sets the Thumbnail
+        /// </summary>
+        /// <remarks>e.g. folder.png</remarks>
+        public string ContentTypeThumbnail { get; }
+
+        /// <summary>
+        /// Gets or sets the Allowed As Root flag
+        /// </summary>
+        public bool AllowedAsRoot { get; }
     }
 }

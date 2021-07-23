@@ -13,6 +13,14 @@ using Umbraco.Cms.Core.Configuration;
 
 namespace Umbraco.Cms.Infrastructure.ModelsBuilder
 {
+
+    /// <summary>
+    /// CodeFirst processing notification handler
+    /// </summary>
+    /// <remarks>Intended to permit code first at launch then db model into class when changes made to a document type.
+    /// I don't think this will work at all or well with containers unless we have a way to know which piece of data is newer to handle the code changing.
+    /// I almost want to guess that the class needs a date time to know when it was created/last updated and use the updated in db model to know how to handle flow.
+    /// </remarks>
     public sealed class CodeFirstNotificationHandler : INotificationHandler<UmbracoApplicationStartingNotification>,
         INotificationHandler<UmbracoRequestEndNotification>,
         INotificationHandler<ContentTypeCacheRefresherNotification>,

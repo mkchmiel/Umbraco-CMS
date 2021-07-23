@@ -1,4 +1,4 @@
-﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+<Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
@@ -61,7 +61,6 @@
     <None Remove="umbraco\Data\**" />
     <None Remove="umbraco\logs\**" />
     <None Remove="umbraco\MediaCache\**" />
-    <Compile Remove="umbraco\models\Document\Sitemap.cs" />
     <None Include="umbraco\UmbracoWebsite\NoNodes.cshtml" />
   </ItemGroup>
 
